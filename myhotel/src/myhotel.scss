@@ -2,15 +2,86 @@
 
 @include mat-core();
 
-$myhotel-primary: mat-palette($mat-teal, 200);
-$myhotel-accent:  mat-palette($mat-teal, 50);
+$hotel-primary: (
+    50 : #f6fbfb,
+    100 : #e8f5f4,
+    200 : #d9efed,
+    300 : #c9e9e6,
+    400 : #bee4e0,
+    500 : #b2dfdb,
+    600 : #abdbd7,
+    700 : #a2d7d2,
+    800 : #99d2cd,
+    900 : #8acac4,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #f6fffe,
+    A700 : #dcfffc,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$hotel-accent: (
+    50 : #fffaed,
+    100 : #fff4d1,
+    200 : #ffecb3,
+    300 : #ffe494,
+    400 : #ffdf7d,
+    500 : #ffd966,
+    600 : #ffd55e,
+    700 : #ffcf53,
+    800 : #ffca49,
+    900 : #ffc038,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fff5e1,
+    A700 : #ffedc8,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$myhotel-primary: mat-palette($hotel-primary, 700, 300, 900);
+$myhotel-accent:  mat-palette($hotel-accent, 500, 400, 700);
 
 $myhotel-warn:    mat-palette($mat-red);
 
 $myhotel: mat-light-theme($myhotel-primary, $myhotel-accent, $myhotel-warn);
 
+@import './app/navigation/navtabs/navtabs.component-theme.scss';
+@import './app/navigation/sidenav-list/sidenavs-list.component-theme.scss';
+
 @include angular-material-theme($myhotel);
 
-.navtabs-container {
-     background-color: mat-color($myhotel-accent);
-}
+// Navtabs component scss file
+@include navtabs-component-theme($myhotel);
+
+// Sidenav-list component scss file
+@include sidenavs-list-component-theme($myhotel);

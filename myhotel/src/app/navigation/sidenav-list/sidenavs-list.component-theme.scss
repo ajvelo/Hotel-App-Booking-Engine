@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@mixin sidenavs-list-component-theme($myhotel) {
+
+    $primary: map-get($myhotel, primary);
+    $accent: map-get($myhotel, accent);
+
+    // Theming styles go here
+    .mat-list-option:hover, 
+    .mat-list-option.mat-list-item-focus, 
+    .mat-nav-list .mat-list-item:hover,
+    .mat-nav-list .mat-list-item.mat-list-item:focus {
+    background-color: mat-color($myhotel-primary, 100);
+    color: mat-color($myhotel-primary, 900);
+    }
+}
