@@ -13,9 +13,10 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'accomodation', component: AccomodationComponent },
   { path: 'celebrations', component: CelebrationsComponent },
-  { path: 'food-beverage', component: FoodBeverageComponent },
-  { path: 'lifestyle', component: LifestyleComponent },
+  { path: 'food-and-beverage', component: FoodBeverageComponent},
+  { path: 'foodandbeverage', redirectTo: 'food-and-beverage', pathMatch: 'full'},
   { path: 'weddings', component: WeddingsComponent },
+  { path: 'lifestyle', component: LifestyleComponent },
   { path: 'offers', component: OffersComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
